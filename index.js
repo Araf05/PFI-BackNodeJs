@@ -1,9 +1,10 @@
 import express from "express"
 import cors from "cors"
 import { configDotenv } from "dotenv"
+import rutasProductos from "./src/routes/products.routes.js"
 
 const app = express();
-const PORT = proccess.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const corsConfig = {
     origin: ['http://localhost:5173', 'https://midominio.com'], // dominios permitidos
@@ -17,6 +18,8 @@ const corsConfig = {
 
 app.use(cors(corsConfig)); // para los headers
 app.use(express.json()); // para el body
+
+app.use("/api", rutasProductos)
 
 app.use((req, res, next) => {
     console.log(`Datos received at: ${req.method} ${req.url}`);
