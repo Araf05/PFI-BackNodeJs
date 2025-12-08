@@ -1,10 +1,13 @@
+import {getAllProductsServices, getProductByIdServices} from '../services/products.services.js';
+
 export const getAllProducts = async (req, res) => {
+    const products = await getAllProductsServices();
     res.status(200).json(products);
 };
 
 export const getProductById = async (req, res) => {
-    const id = req.param.id;
-    const product = products.find(product => product.id == id);
+    const id = req.params.id;
+    const product = await getProductByIdServices(id);
     if(product) {
         res.status(200).json(product);
     } else {

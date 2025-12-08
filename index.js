@@ -1,7 +1,7 @@
-import express from "express"
-import cors from "cors"
-import { configDotenv } from "dotenv"
-import rutasProductos from "./src/routes/products.routes.js"
+import express from 'express'
+import cors from 'cors'
+import { configDotenv } from 'dotenv'
+import rutasProductos from './src/routes/products.routes.js'
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,7 +19,7 @@ const corsConfig = {
 app.use(cors(corsConfig)); // para los headers
 app.use(express.json()); // para el body
 
-app.use("/api", rutasProductos)
+app.use('/api', rutasProductos)
 
 app.use((req, res, next) => {
     console.log(`Datos received at: ${req.method} ${req.url}`);
