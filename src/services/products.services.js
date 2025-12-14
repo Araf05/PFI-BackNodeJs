@@ -4,13 +4,13 @@
 // ];
 import { obtenerProductos } from '../models/products.models.js'
 
-export const getAllProductsServices = () => {
-    const products = obtenerProductos();
+export const getAllProductsServices = async () => {
+    const products = await obtenerProductos();
     console.log("Productos desde services: ", products)
     return products;
 };
 
-export const getProductByIdServices = async(id) => {
-    const products = obtenerProductos();
+export const getProductByIdServices = async (id) => {
+    const products = await obtenerProductos();
     return products.find(product => product.id == id);
 }

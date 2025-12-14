@@ -19,8 +19,12 @@ async function leerDB() {
     }
 };
 
+async function escribirDB(products) {
+    const data = await JSON.stringify(products)
+}
+
 
 export async function obtenerProductos() {
     const productos = await leerDB();
     return productos;
-}
+};
