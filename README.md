@@ -168,11 +168,11 @@ Los endpoints fueron testeados utilizando Postman, verificando:
 
 ## 📌 Estado del proyecto
 
-✅ Funcional
-✅ Autenticación implementada
-✅ Base de datos en la nube
-✅ Arquitectura escalable
-✅ Lista para producción
+ Funcional
+- ✅ Autenticación implementada
+- ✅ Base de datos en la nube
+- ✅ Arquitectura escalable
+- ✅ Lista para producción
 
 ---
 
