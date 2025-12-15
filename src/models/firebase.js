@@ -45,7 +45,7 @@ function obtenerProductos() {
   )
 }
 
-obtenerProductos();
+//obtenerProductos();
 
 function agregarProducto(producto) {
   return (

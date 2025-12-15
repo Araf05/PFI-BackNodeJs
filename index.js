@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import { configDotenv } from 'dotenv'
 import rutasProductos from './src/routes/products.routes.js'
+import rutasLog from './src/routes/auth.routes.js'
+import {authentication} from './src/middleware/authentication.js'
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +20,9 @@ const corsConfig = {
 
 app.use(cors(corsConfig)); // para los headers
 app.use(express.json()); // para el body
+
+app.use('/api', rutasLog)
+app.use(authentication);
 
 app.use('/api', rutasProductos)
 
