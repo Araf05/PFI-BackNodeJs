@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
     version: "1.0.0",
     documentation: "Ver README del repositorio",
     endpoints: {
-      login: "/auth/login",
+      login: "/api/login",
       products: "/api/products"
     }
   });
