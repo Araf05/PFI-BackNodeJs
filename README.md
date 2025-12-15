@@ -6,6 +6,17 @@ La aplicación permite **crear, leer y eliminar productos**, utilizando **Fireba
 
 ---
 
+## 🚀 Deploy
+
+La aplicación se encuentra desplegada y funcionando en producción:
+
+🔗 **URL:** [https://pfi-back-node-js.vercel.app/](https://pfi-back-node-js.vercel.app/)
+
+Al acceder a la ruta raíz (`/`) se muestra un mensaje de bienvenida con el estado de la API
+y los endpoints disponibles.
+
+---
+
 ## 🚀 Tecnologías utilizadas
 
 - **Node.js**
