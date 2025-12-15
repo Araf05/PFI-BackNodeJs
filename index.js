@@ -31,6 +31,19 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "🚀 TechLab API - Gestión de Productos",
+    status: "online",
+    version: "1.0.0",
+    documentation: "Ver README del repositorio",
+    endpoints: {
+      login: "/auth/login",
+      products: "/api/products"
+    }
+  });
+});
+
 app.use((req, res, next) => {
     res.status(404).send(`Recurso no encontrado o ruta inválida`);
 });
