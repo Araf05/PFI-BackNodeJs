@@ -21,7 +21,7 @@ const corsConfig = {
 app.use(cors(corsConfig)); // para los headers
 app.use(express.json()); // para el body
 
-app.use('/api', rutasLog)
+app.use('/auth', rutasLog)
 app.use(authentication);
 
 app.use('/api', rutasProductos)

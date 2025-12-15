@@ -15,14 +15,14 @@ export function obtenerProducto(id) {
         } else {
           // docSnap.data() will be undefined in this case
           console.log("No such document!");
-          res()
+          res();
         }
       }catch(error) {
         console.log(error);
         rej(error);
       }
     })
-  )
+  );
 }
 
 export function obtenerProductos() {
@@ -43,7 +43,7 @@ export function obtenerProductos() {
         rej(error);
       }
     })
-  )
+  );
 }
 
 //obtenerProductos();
@@ -54,30 +54,30 @@ export function agregarProducto(producto) {
       try {
           const docRef = await addDoc(collection(db, "products"), producto);
           console.log("Document written with ID: ", docRef.id);
-          res({...producto, id: docRef.id})
+          res({...producto, id: docRef.id});
         }catch(error) {
           console.log(error);
-          rej(error)
+          rej(error);
         }  
     })
-  )
+  );
 }
 
 //agregarProducto({nombre: "yerba", categoria: "infusion", precio: 100});
 
-export function actualizarProducto(producto) {
+export function actualizarProducto(id, producto) {
   return (
     new Promise(async(res, rej) => {
       try {
-        await updateDoc(doc(db, "products", producto.id), { precio: producto.precio });
-        console.log("Proucto actualizado: ", producto.id)
-        res()
+        await updateDoc(doc(db, "products", id), {...producto });
+        console.log('producto actualizado!')
+        res();
       } catch(error) {
         console.log(error);
-        rej(error)
+        rej(error);
       }
     })
-  )
+  );
 }
 
 //actualizarProducto({id:"P7QZ3V39cpkL2kwxdGIo", precio: 350})
@@ -87,14 +87,14 @@ export function eliminarProducto(id) {
     new Promise(async(res, rej) => {
       try {
         await deleteDoc(doc(db, "products", id));
-        console.log("producto eliminado")
+        console.log("producto eliminado");
         res();
       } catch(error) {
         console.log(error);
         rej(error);
       }
     })
-  )
+  );
 }
 
 //eliminarProducto("fWIpORWLJJ25nGon62wH")

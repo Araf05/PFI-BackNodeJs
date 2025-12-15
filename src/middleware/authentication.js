@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 
-const secret_key = "jfh834l3fhkjkfji4"//process.env.JWT_SECRET_KEY;
+const secret_key = process.env.JWT_SECRET_KEY || "jfh834l3fhkjkfji4";
 //Middleware para verificar el toke JWT
 export const authentication = (req, res, next) => {
     const token = req.headers['authorization'].split(" ")[1];

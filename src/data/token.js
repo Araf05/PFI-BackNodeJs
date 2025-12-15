@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import jwt from 'jsonwebtoken'
 
-const secret_key = "jfh834l3fhkjkfji4" //process.env.JWT_SECRET_KEY;
+const secret_key =process.env.JWT_SECRET_KEY ||  "jfh834l3fhkjkfji4" ;
 console.log(secret_key)
 
 export const generateToken = (userData) => {

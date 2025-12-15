@@ -1,4 +1,4 @@
-import { generateToken } from "../data/tokentest.js";
+import { generateToken } from "../data/token.js";
 
 export const login = async (req, res) => {
     const {email, password} = req.body;
